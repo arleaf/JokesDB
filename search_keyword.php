@@ -23,7 +23,7 @@
     
     $sql = "SELECT JokeID, Joke_question, Joke_answer, users.user_id, user_name FROM Jokes_table JOIN users ON users.user_id = jokes_table.user_id WHERE Joke_question LIKE'%$keywordfromform%'";
 
-    $stmt = $mysqli->prepare("SELECT JokeID, Joke_question, Joke_answer, users.user_id, user_name FROM Jokes_table JOIN users ON users.user_id = jokes_table.user_id WHERE Joke_question LIKE'%$keywordfromform%'");
+    $stmt = $mysqli->prepare("SELECT JokeID, Joke_question, Joke_answer, users.user_id, user_name FROM Jokes_table JOIN users ON users.user_id = Jokes_table.user_id WHERE Joke_question LIKE'%$keywordfromform%'");
     //$stmt->bind_param("s", $keywordfromform);
 
     echo "SQL statement = " . $sql . "<br>";
